@@ -1,0 +1,33 @@
+<%- include("partials/header") %>
+
+<div class="container">
+  <div class="card">
+    <h2>Student Dashboard</h2>
+
+    <% if (application) { %>
+      <p><strong>Application No:</strong> <%= application.applicationNumber %></p>
+
+      <p>
+        <strong>Status:</strong>
+        <% if (application.status === "pending") { %>
+          Application Submitted
+        <% } else if (application.status === "under_review") { %>
+          Application Under Review
+        <% } else if (application.status === "approved") { %>
+          Approved ✅
+        <% } else { %>
+          Rejected ❌
+        <% } %>
+      </p>
+
+      <p><strong>Passport No:</strong> <%= application.passportNumber %></p>
+
+      <a href="/student/status" class="btn">View Full Status</a>
+    <% } else { %>
+      <p>You have not applied yet.</p>
+      <a href="/student/apply" class="btn">Apply Now</a>
+    <% } %>
+  </div>
+</div>
+
+<%- include("partials/footer") %>

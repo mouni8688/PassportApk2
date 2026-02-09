@@ -1,0 +1,20 @@
+<%- include("partials/header") %>
+
+<div class="container">
+  <div class="card">
+    <h2>Student Dashboard</h2>
+
+    <% if (application) { %>
+      <p><strong>Application No:</strong> <%= application.applicationNumber %></p>
+      <p><strong>Status:</strong> <%= application.status %></p>
+      <p><strong>Passport No:</strong> <%= application.passportNumber %></p>
+    <% } else { %>
+      <p>No application found.</p>
+
+      <!-- 🔥 APPLY LINK ADDED -->
+      <a href="/student/apply" class="btn">Apply for Passport</a>
+    <% } %>
+  </div>
+</div>
+
+<%- include("partials/footer") %>

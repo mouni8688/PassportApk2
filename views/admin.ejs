@@ -1,0 +1,59 @@
+<%- include("partials/header") %>
+
+<div class="table-container">
+  <h2>Admin Dashboard</h2>
+
+  <!-- BACK / LOGOUT BUTTONS -->
+  <div style="margin-bottom: 15px;">
+    <a href="/" class="btn">Home</a>
+    <a href="/login" class="btn secondary">Logout</a>
+  </div>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Application No</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+
+    <% applications.forEach(app => { %>
+      <tr>
+        <td><%= app.studentId.name %></td>
+        <td><%= app.department %></td>
+        <td><%= app.applicationNumber %></td>
+
+        <!-- CURRENT STATUS -->
+        <td>
+          <span class="status <%= app.status %>">
+            <%= app.status %>
+          </span>
+        </td>
+
+        <!-- UPDATE STATUS -->
+        <td>
+          <form method="POST" action="/admin/update/<%= app._id %>">
+            <select name="status">
+              <option value="pending" <%= app.status === "pending" ? "selected" : "" %>>
+                Pending
+              </option>
+              <option value="under_review" <%= app.status === "under_review" ? "selected" : "" %>>
+                Under Review
+              </option>
+              <option value="approved" <%= app.status === "approved" ? "selected" : "" %>>
+                Approved
+              </option>
+              <option value="rejected" <%= app.status === "rejected" ? "selected" : "" %>>
+                Rejected
+              </option>
+            </select>
+            <button type="submit">Update</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</div>
+
+<%- include("partials/footer") %>

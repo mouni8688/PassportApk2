@@ -1,0 +1,16 @@
+<%- include("partials/header") %>
+
+<div class="container">
+  <div class="card">
+    <h2>Apply for Passport</h2>
+
+    <form method="POST" action="/student/apply" class="form">
+      <input name="department" placeholder="Department" required />
+      <input name="year" placeholder="Year" required />
+      <input name="photoUrl" placeholder="Photo URL" />
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
+</div>
+
+<%- include("partials/footer") %>

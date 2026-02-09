@@ -1,0 +1,210 @@
+* {
+  box-sizing: border-box;
+}
+
+/* ---------- BODY ---------- */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  min-height: 100vh;
+  color: #fff; /* IMPORTANT: white text on image */
+
+  /* ✈️ FLIGHT BACKGROUND IMAGE */
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+     url("/images/airplane.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: rgba(30, 60, 114, 0.92);
+  color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(6px);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+header nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: rgba(30, 60, 114, 0.95);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* ---------- MAIN ---------- */
+main {
+  min-height: calc(100vh - 120px);
+  padding: 40px 20px;
+}
+
+/* ---------- CENTER CARD ---------- */
+.container {
+  max-width: 420px;
+  margin: auto;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.96);
+  color: #333; /* text inside card dark */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* ---------- FORMS ---------- */
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form input,
+.form select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form button {
+  width: 100%;
+  padding: 10px;
+  background: #1e3c72;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.form button:hover {
+  background: #16305a;
+}
+
+/* ---------- BACK BUTTON ---------- */
+.back-btn {
+  display: inline-block;
+  margin-top: 15px;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #1e3c72;
+  color: #1e3c72;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.back-btn:hover {
+  background: #1e3c72;
+  color: #fff;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  text-align: center;
+  margin-top: 120px;
+  color: #fff;
+}
+
+.hero h2 {
+  font-size: 32px;
+}
+
+.hero p {
+  color: #f1f1f1;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 10px;
+  background: #1e3c72;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.btn.secondary {
+  background: #555;
+}
+
+/* ---------- ADMIN TABLE ---------- */
+.table-container {
+  max-width: 900px;
+  margin: auto;
+  background: rgba(255,255,255,0.97);
+  padding: 20px;
+  border-radius: 12px;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: #1e3c72;
+  color: white;
+}
+
+tr:hover {
+  background: #f2f2f2;
+}
+
+/* ---------- STATUS COLORS ---------- */
+.status.pending {
+  color: orange;
+  font-weight: bold;
+}
+
+.status.under_review {
+  color: dodgerblue;
+  font-weight: bold;
+}
+
+.status.approved {
+  color: green;
+  font-weight: bold;
+}
+
+.status.rejected {
+  color: red;
+  font-weight: bold;
+}
