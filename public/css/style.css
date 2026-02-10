@@ -1,210 +1,221 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* ---------- BODY ---------- */
+/* ================= BODY ================= */
 body {
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-family: "Poppins", "Segoe UI", sans-serif;
   min-height: 100vh;
-  color: #fff; /* IMPORTANT: white text on image */
+  color: #fff;
 
-  /* ✈️ FLIGHT BACKGROUND IMAGE */
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.55)
-    ),
-     url("/images/airplane.png");
+  background:
+    radial-gradient(circle at top, rgba(0,0,0,0.35), rgba(0,0,0,0.9)),
+    url("/images/airplane2.jpeg");
+
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-/* ---------- HEADER ---------- */
+/* ================= HEADER ================= */
 header {
-  background: rgba(30, 60, 114, 0.92);
-  color: #fff;
-  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+  padding: 16px 40px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(6px);
 }
 
 header h1 {
-  margin: 0;
-  font-size: 22px;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 header nav a {
+  margin-left: 25px;
   color: #fff;
-  margin-left: 20px;
   text-decoration: none;
   font-weight: 500;
+  position: relative;
 }
 
-header nav a:hover {
-  text-decoration: underline;
+header nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #00e0ff;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
 }
 
-/* ---------- FOOTER ---------- */
-footer {
-  background: rgba(30, 60, 114, 0.95);
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
+header nav a:hover::after {
   width: 100%;
 }
 
-/* ---------- MAIN ---------- */
-main {
-  min-height: calc(100vh - 120px);
-  padding: 40px 20px;
+/* ================= HERO ================= */
+.hero {
+  min-height: calc(100vh - 140px);
+  padding-top: 120px; /* header space */
+  padding-bottom: 80px; /* footer space */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-/* ---------- CENTER CARD ---------- */
+.hero-content {
+  max-width: 700px;
+  padding: 50px 40px;
+
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(16px);
+  border-radius: 24px;
+
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+}
+
+.hero h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* ================= BUTTONS ================= */
+.buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+
+  color: #fff;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  box-shadow: 0 10px 30px rgba(0,114,255,0.6);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 16px 45px rgba(0,114,255,0.9);
+}
+
+.btn.secondary {
+  background: linear-gradient(135deg, #434343, #000);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* ================= GLASS CARD ================= */
 .container {
   max-width: 420px;
-  margin: auto;
+  margin: 140px auto;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.96);
-  color: #333; /* text inside card dark */
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(16px);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  color: #fff;
 }
 
-/* ---------- FORMS ---------- */
+/* ================= FORMS ================= */
 .form-title {
   text-align: center;
+  font-size: 26px;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
 .form input,
 .form select {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
 }
 
 .form button {
   width: 100%;
-  padding: 10px;
-  background: #1e3c72;
+  padding: 14px;
+  margin-top: 10px;
+  border-radius: 30px;
+
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
   color: #fff;
   border: none;
-  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 15px;
 }
 
-.form button:hover {
-  background: #16305a;
-}
-
-/* ---------- BACK BUTTON ---------- */
-.back-btn {
-  display: inline-block;
-  margin-top: 15px;
-  text-align: center;
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #1e3c72;
-  color: #1e3c72;
-  border-radius: 6px;
-  text-decoration: none;
-}
-
-.back-btn:hover {
-  background: #1e3c72;
-  color: #fff;
-}
-
-/* ---------- HERO ---------- */
-.hero {
-  text-align: center;
-  margin-top: 120px;
-  color: #fff;
-}
-
-.hero h2 {
-  font-size: 32px;
-}
-
-.hero p {
-  color: #f1f1f1;
-}
-
-/* ---------- BUTTONS ---------- */
-.btn {
-  display: inline-block;
-  padding: 12px 25px;
-  margin: 10px;
-  background: #1e3c72;
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-}
-
-.btn.secondary {
-  background: #555;
-}
-
-/* ---------- ADMIN TABLE ---------- */
+/* ================= TABLE ================= */
 .table-container {
-  max-width: 900px;
-  margin: auto;
-  background: rgba(255,255,255,0.97);
-  padding: 20px;
-  border-radius: 12px;
-  color: #333;
+  max-width: 1000px;
+  margin: 160px auto 80px;
+  padding: 25px;
+
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  color: #fff;
 }
 
 th, td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+  padding: 14px;
 }
 
 th {
-  background: #1e3c72;
-  color: white;
+  background: rgba(0,0,0,0.45);
 }
 
 tr:hover {
-  background: #f2f2f2;
+  background: rgba(255,255,255,0.08);
 }
 
-/* ---------- STATUS COLORS ---------- */
-.status.pending {
-  color: orange;
-  font-weight: bold;
-}
+/* ================= STATUS ================= */
+.status.pending { color: #ffb703; font-weight: bold; }
+.status.under_review { color: #00e0ff; font-weight: bold; }
+.status.approved { color: #38b000; font-weight: bold; }
+.status.rejected { color: #ff4d4d; font-weight: bold; }
 
-.status.under_review {
-  color: dodgerblue;
-  font-weight: bold;
-}
+/* ================= FOOTER ================= */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 
-.status.approved {
-  color: green;
-  font-weight: bold;
-}
-
-.status.rejected {
-  color: red;
-  font-weight: bold;
+  background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
 }
